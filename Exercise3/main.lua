@@ -7,8 +7,8 @@ function love.load()
     require "src.star"
 
     player = Player(100, 100)
+    star = Star(675, 225)
 
-    star = Star(675, 425)
     objects = {}
     table.insert(objects, player)
     table.insert(objects, box)
@@ -21,11 +21,11 @@ function love.load()
         {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-        {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-        {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-        {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-        {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        {1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+        {1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1},
+        {1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1},
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
     }
 
@@ -102,5 +102,12 @@ function love.draw()
     -- Draw the walls
     for i,v in ipairs(walls) do
         v:draw()
+    end
+end
+
+function love.keypressed(key)
+    -- Let the player jump when the up-key is pressed
+    if key == "up" then
+        player:jump()
     end
 end
