@@ -1,4 +1,5 @@
 function love.load()
+    
     Object = require "lib.classic"
     require "src.entity"
     require "src.player"
@@ -8,7 +9,7 @@ function love.load()
 
     player = Player(100, 100)
     box = Box(250, 150)
-    star = Star(680, 230)
+    star = Star(675, 225)
 
     objects = {}
     table.insert(objects, player)
