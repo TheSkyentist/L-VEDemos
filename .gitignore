@@ -1,6 +1,9 @@
 # Compiled Lua sources
 luac.out
 
+# MacOS DS_Store
+*.DS_Store
+
 # luarocks build files
 *.src.rock
 *.zip
